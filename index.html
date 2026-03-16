@@ -1539,4 +1539,24 @@ buildSocGrid();
   const c=document.getElementById('pc'),ctx=c.getContext('2d');
   ctx.fillStyle='#f4f5fb';ctx.fillRect(0,0,300,300);
   ctx.strokeStyle='#dde0f2';ctx.lineWidth=2;ctx.strokeRect(18,18,264,264);
-  [[18,18],[195,18],[18,195]].forEach(([x,y])=>{ctx.strokeRect(x,y,69,69);ctx.fillStyle='#dde0f2';ctx.fillRect(x+9,y+9,51,51);ctx.fillStyle=
+  [[18,18],[195,18],[18,195]].forEach(([x,y])=>{
+    ctx.strokeRect(x,y,69,69);
+    ctx.fillStyle='#dde0f2';
+    ctx.fillRect(x+9,y+9,51,51);
+    ctx.fillStyle='#f4f5fb';
+    ctx.fillRect(x+18,y+18,33,33);
+  });
+  // draw some fake dots
+  ctx.fillStyle='#dde0f2';
+  for(let r=0;r<10;r++){for(let c2=0;c2<10;c2++){
+    if(Math.random()>.5)ctx.fillRect(90+c2*12,90+r*12,10,10);
+  }}
+})();
+
+// Auto-generate QR on page load
+ag();
+
+
+</script>
+</body>
+</html>
